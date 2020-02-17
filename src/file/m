@@ -1,0 +1,294 @@
+
+import React from 'react';
+import './App.css';
+let data={
+  "contacts": [
+      {
+              "id": "c200",
+              "name": "Ravi Tamada",
+              "email": "ravi@gmail.com",
+              "address": "xx-xx-xxxx,x - street, x - country",
+              "gender" : "male",
+              "phone": {
+                  "mobile": "+91 0000000000",
+                  "home": "00 000000",
+                  "office": "00 000000"
+              }
+      },
+      {
+              "id": "c201",
+              "name": "Johnny Depp",
+              "email": "johnny_depp@gmail.com",
+              "address": "xx-xx-xxxx,x - street, x - country",
+              "gender" : "male",
+              "phone": {
+                  "mobile": "+91 0000000000",
+                  "home": "00 000000",
+                  "office": "00 000000"
+              }
+      },
+      {
+              "id": "c202",
+              "name": "Leonardo Dicaprio",
+              "email": "leonardo_dicaprio@gmail.com",
+              "address": "xx-xx-xxxx,x - street, x - country",
+              "gender" : "male",
+              "phone": {
+                  "mobile": "+91 0000000000",
+                  "home": "00 000000",
+                  "office": "00 000000"
+              }
+      },
+      {
+              "id": "c203",
+              "name": "John Wayne",
+              "email": "john_wayne@gmail.com",
+              "address": "xx-xx-xxxx,x - street, x - country",
+              "gender" : "male",
+              "phone": {
+                  "mobile": "+91 0000000000",
+                  "home": "00 000000",
+                  "office": "00 000000"
+              }
+      },
+      {
+              "id": "c204",
+              "name": "Angelina Jolie",
+              "email": "angelina_jolie@gmail.com",
+              "address": "xx-xx-xxxx,x - street, x - country",
+              "gender" : "female",
+              "phone": {
+                  "mobile": "+91 0000000000",
+                  "home": "00 000000",
+                  "office": "00 000000"
+              }
+      },
+      {
+              "id": "c205",
+              "name": "Dido",
+              "email": "dido@gmail.com",
+              "address": "xx-xx-xxxx,x - street, x - country",
+              "gender" : "female",
+              "phone": {
+                  "mobile": "+91 0000000000",
+                  "home": "00 000000",
+                  "office": "00 000000"
+              }
+      },
+      {
+              "id": "c206",
+              "name": "Adele",
+              "email": "adele@gmail.com",
+              "address": "xx-xx-xxxx,x - street, x - country",
+              "gender" : "female",
+              "phone": {
+                  "mobile": "+91 0000000000",
+                  "home": "00 000000",
+                  "office": "00 000000"
+              }
+      },
+      {
+              "id": "c207",
+              "name": "Hugh Jackman",
+              "email": "hugh_jackman@gmail.com",
+              "address": "xx-xx-xxxx,x - street, x - country",
+              "gender" : "male",
+              "phone": {
+                  "mobile": "+91 0000000000",
+                  "home": "00 000000",
+                  "office": "00 000000"
+              }
+      },
+      {
+              "id": "c208",
+              "name": "Will Smith",
+              "email": "will_smith@gmail.com",
+              "address": "xx-xx-xxxx,x - street, x - country",
+              "gender" : "male",
+              "phone": {
+                  "mobile": "+91 0000000000",
+                  "home": "00 000000",
+                  "office": "00 000000"
+              }
+      },
+      {
+              "id": "c209",
+              "name": "Clint Eastwood",
+              "email": "clint_eastwood@gmail.com",
+              "address": "xx-xx-xxxx,x - street, x - country",
+              "gender" : "male",
+              "phone": {
+                  "mobile": "+91 0000000000",
+                  "home": "00 000000",
+                  "office": "00 000000"
+              }
+      },
+      {
+              "id": "c2010",
+              "name": "Barack Obama",
+              "email": "barack_obama@gmail.com",
+              "address": "xx-xx-xxxx,x - street, x - country",
+              "gender" : "male",
+              "phone": {
+                  "mobile": "+91 0000000000",
+                  "home": "00 000000",
+                  "office": "00 000000"
+              }
+      },
+      {
+              "id": "c2011",
+              "name": "Kate Winslet",
+              "email": "kate_winslet@gmail.com",
+              "address": "xx-xx-xxxx,x - street, x - country",
+              "gender" : "female",
+              "phone": {
+                  "mobile": "+91 0000000000",
+                  "home": "00 000000",
+                  "office": "00 000000"
+              }
+      },
+      {
+              "id": "c2012",
+              "name": "Eminem",
+              "email": "eminem@gmail.com",
+              "address": "xx-xx-xxxx,x - street, x - country",
+              "gender" : "male",
+              "phone": {
+                  "mobile": "+91 0000000000",
+                  "home": "00 000000",
+                  "office": "00 000000"
+              }
+      }
+  ]
+}
+
+export default class App extends React.PureComponent{
+
+  loadContacts(){
+    let table=  <table border="2px">
+       <thead>
+        <tr>
+          <th>Name</th>
+          <th>Email</th>
+          <th>Address</th>
+          <th>Gender</th>
+          <th>Mobile</th>
+          <th>Home</th>
+          <th>Office</th>
+        </tr>
+        </thead>
+        <tbody>
+        {this.loadRows()}
+        </tbody>
+      </table>
+
+      return table;
+  }
+
+  loadRows(){
+    let myRows=[];
+    // for(let i=0;i<data.contacts.length;i++)
+    // {
+    // let row= <tr>
+    // <td>{data.contacts[i].name}</td>
+    // <td>{data.contacts[i].email}</td>
+    // <td>{data.contacts[i].address}</td>
+    //  </tr>
+    //  myRows.push(row);
+    // }
+
+
+
+    data.contacts.map(function(item,index){
+      let row= <tr key={item.id}>
+     <td>{item.name}</td>
+      <td>{item.email}</td>
+   <td>{item.address}</td>
+   <td>{item.gender}</td>
+   <td>{item.phone.mobile}</td>
+   <td>{item.phone.home}</td>
+   <td>{item.phone.office}</td>
+
+     </tr>
+     myRows.push(row);
+    });
+
+    return myRows;
+  }
+ 
+  render(){
+    return ( 
+    <div>
+      <h1>All Contacts</h1>
+      {this.loadContacts()}
+    </div>)
+  }
+
+
+
+}
+
+
+
+
+
+
+
+import React, { Component } from 'react';
+import Login from './Login';
+import Logout from './Logout';
+import { BrowserRouter, Route } from 'react-router-dom';
+
+export default class App extends Component {
+  constructor(props){
+    super(props);
+    this.state={
+      isLoggin:false,
+      username:"Shiv",
+      password:123
+
+    }
+    
+  }
+  islogin=()=>{
+    return this.setState({
+      isLoggin:true
+
+    })
+  }
+  islogout=()=>{
+    return this.setState({
+      isLoggin:false
+    })
+  }
+  render() {
+    const Username=this.state.isLoggin;
+    const Password=this.state.Password;
+    return (
+      <div>
+      <form >
+      <input type="text" placeholder="Username" required />
+      <br />
+      <input type="password" placeholder="Password" required />
+      <br />
+      <input type="Submit"  value="Login" onClick={this.props.Click} />
+      &nbsp;&nbsp;&nbsp;&nbsp;
+      <input type="Reset" value="Reset"/><br/>
+      <a href="/logout">Forget password?</a><br/>
+      <input type="button" value="Signup" onClick={this.props.Click} />
+      </form>
+
+
+
+
+    
+      <BrowserRouter>
+      <Route component={Logout} path="/"></Route>
+      </BrowserRouter>
+      </div>  
+      
+      
+      
+    )
+  }
+}
